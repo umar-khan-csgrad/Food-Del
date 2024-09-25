@@ -1,0 +1,111 @@
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.explore-menu h1 {
+    color: #262626;
+    font-weight: 500;
+}
+
+.explore-menu-text {
+    max-width: 60%;
+    color: #808080;
+}
+
+.explore-menu-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.refresh-button {
+    background-color: #FF4C24;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.refresh-button:hover {
+    background-color: #e03a1e;
+    transform: scale(1.05);
+}
+
+.explore-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+
+.explore-menu-list::-webkit-scrollbar {
+    display: none;
+}
+
+.explore-menu-list-item {
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.explore-menu-list-item img {
+    width: 7.5vw;
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+/* Hover effect specifically for icons */
+.explore-menu-list-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.explore-menu-list-item img:hover::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 76, 36, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.explore-menu-list-item img:hover::before {
+    opacity: 1;
+}
+
+.explore-menu-list-item p {
+    margin-top: 10px;
+    color: #747474;
+    font-size: max(1.4vw, 16px);
+    cursor: pointer;
+}
+
+.explore-menu hr {
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #E2E2E2;
+    border: none;
+}
+
+@media (max-width: 1050px) {
+    .explore-menu-text {
+        max-width: 100%;
+        font-size: 14px;
+    }
+}
